@@ -6,10 +6,13 @@ export async function POST(request: Request) {
       return Response.json({ error: "Valid email is required" }, { status: 400 })
     }
 
-    // Send to Zapier webhook
-    const zapierWebhookUrl = process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL
+    const zapierWebhookUrl = process.env.ZAPIER_WEBHOOK_URL || process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL
+
+    console.log("[v0] Webhook URL exists:", !!zapierWebhookUrl)
+    console.log("[v0] Attempting to send to Zapier...")
 
     if (!zapierWebhookUrl) {
+      console.log("[v0] ERROR: Webhook URL is missing from environment variables")
       return Response.json({ error: "Webhook configuration missing" }, { status: 500 })
     }
 
@@ -24,13 +27,18 @@ export async function POST(request: Request) {
       }),
     })
 
+    console.log("[v0] Zapier response status:", response.status)
+
     if (!response.ok) {
-      throw new Error("Failed to submit to Zapier")
+      const errorText = await response.text()
+      console.log("[v0] Zapier error:", errorText)
+      throw new Error(`Zapier returned ${response.status}`)
     }
 
+    console.log("[v0] Successfully submitted to Zapier")
     return Response.json({ success: true, message: "Successfully joined waitlist" }, { status: 200 })
   } catch (error) {
-    console.error("Waitlist error:", error)
+    console.error("[v0] Waitlist error:", error)
     return Response.json({ error: "Failed to join waitlist" }, { status: 500 })
   }
 }
