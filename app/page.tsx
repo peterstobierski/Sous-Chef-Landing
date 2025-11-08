@@ -1,8 +1,49 @@
+"use client"
+
+import type React from "react"
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
+import { useState } from "react"
 
 export default function LandingPage() {
+  const [email, setEmail] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState("")
+  const [error, setError] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    setMessage("")
+    setError("")
+
+    try {
+      const response = await fetch("/api/waitlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        setError(data.error || "Failed to join waitlist")
+        return
+      }
+
+      setMessage("Thanks for joining! Check your email for updates.")
+      setEmail("")
+    } catch (err) {
+      setError("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-50 to-stone-100">
       {/* Header */}
@@ -98,10 +139,24 @@ export default function LandingPage() {
             <Card className="p-6 bg-white/80 backdrop-blur-sm border-gold/30 max-w-lg mx-auto">
               <div className="space-y-4">
                 <h3 className="text-lg font-semibold text-stone-800">Join the waitlist</h3>
-                <div className="flex gap-2">
-                  <Input placeholder="Enter your email" className="flex-1 border-stone-300 focus:border-gold" />
-                  <Button className="bg-gold hover:bg-gold/90 text-white px-6">Join Waitlist</Button>
-                </div>
+                <form onSubmit={handleSubmit} className="space-y-3">
+                  <div className="flex gap-2">
+                    <Input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="flex-1 border-stone-300 focus:border-gold"
+                      required
+                      disabled={loading}
+                    />
+                    <Button type="submit" disabled={loading} className="bg-gold hover:bg-gold/90 text-white px-6">
+                      {loading ? "Joining..." : "Join Waitlist"}
+                    </Button>
+                  </div>
+                  {message && <p className="text-sm text-green-600">{message}</p>}
+                  {error && <p className="text-sm text-red-600">{error}</p>}
+                </form>
               </div>
             </Card>
           </div>
@@ -157,10 +212,24 @@ export default function LandingPage() {
 
             <Card className="max-w-md mx-auto p-6 bg-white/95 backdrop-blur-sm">
               <div className="space-y-4">
-                <div className="flex gap-2">
-                  <Input placeholder="Enter your email" className="flex-1 border-stone-300 focus:border-gold" />
-                  <Button className="bg-gold hover:bg-gold/90 text-white px-6">Join Waitlist</Button>
-                </div>
+                <form onSubmit={handleSubmit} className="space-y-3">
+                  <div className="flex gap-2">
+                    <Input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="flex-1 border-stone-300 focus:border-gold"
+                      required
+                      disabled={loading}
+                    />
+                    <Button type="submit" disabled={loading} className="bg-gold hover:bg-gold/90 text-white px-6">
+                      {loading ? "Joining..." : "Join Waitlist"}
+                    </Button>
+                  </div>
+                  {message && <p className="text-sm text-green-600">{message}</p>}
+                  {error && <p className="text-sm text-red-600">{error}</p>}
+                </form>
                 <p className="text-sm text-stone-600">
                   We'll notify you as soon as Sous-Chef is available for download.
                 </p>
