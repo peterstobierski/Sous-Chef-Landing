@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
@@ -52,6 +52,15 @@ export default function LandingPage() {
           <div className="flex items-center">
             <img src="/sous-chef-logo-cropped.png" alt="Sous-Chef Logo" className="h-24" />
           </div>
+          {/* Navigation Links */}
+          <nav className="flex gap-6 text-sm font-medium text-stone-600">
+            <Link href="/" className="text-gold">
+              Home
+            </Link>
+            <Link href="/how-it-works" className="hover:text-gold transition-colors">
+              How It Works
+            </Link>
+          </nav>
         </div>
       </header>
 
@@ -121,14 +130,14 @@ export default function LandingPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9928.PNG-fBkmirSn1F1XRJEvQ7Lgcgle7uZzSA.png"
+                    src="/images/img-9928.png"
                     alt="Sous-Chef Home Dashboard"
                     className="rounded-2xl shadow-2xl border border-stone-200"
                   />
                 </div>
                 <div className="space-y-4 mt-8">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9931.PNG-V5ActcxHHPVnnsh0ieb436WLckcl7N.png"
+                    src="/images/img-9931.png"
                     alt="Smart Pantry Management"
                     className="rounded-2xl shadow-2xl border border-stone-200"
                   />
@@ -168,7 +177,7 @@ export default function LandingPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 <div className="space-y-2">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9929.PNG-Sb3XsZTDgNeqsHzNWeM203E91vPGcV.png"
+                    src="/images/img-9929.png"
                     alt="Pantry Overview"
                     className="rounded-xl shadow-lg border border-stone-200 w-full"
                   />
@@ -176,7 +185,7 @@ export default function LandingPage() {
                 </div>
                 <div className="space-y-2">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9934.PNG-cIN9lCe9Az3ktfAzJ20zTxkRxrJI4P.png"
+                    src="/images/img-9934.png"
                     alt="Meal Planning"
                     className="rounded-xl shadow-lg border border-stone-200 w-full"
                   />
@@ -184,7 +193,7 @@ export default function LandingPage() {
                 </div>
                 <div className="space-y-2">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9937.PNG-5JYA0BijG0gm45d9kW4gj74kiiCmUv.png"
+                    src="/images/img-9937.png"
                     alt="Recipe Analysis"
                     className="rounded-xl shadow-lg border border-stone-200 w-full"
                   />
@@ -192,7 +201,7 @@ export default function LandingPage() {
                 </div>
                 <div className="space-y-2">
                   <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_9939.PNG-0nj8vbTcLZ8jkDOZV5GL6q88XcJCSN.png"
+                    src="/images/img-9939.png"
                     alt="Shopping Lists"
                     className="rounded-xl shadow-lg border border-stone-200 w-full"
                   />
