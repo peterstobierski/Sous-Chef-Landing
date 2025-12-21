@@ -17,7 +17,7 @@ const outfit = Outfit({
 })
 
 export const metadata: Metadata = {
-  title: "Sous-Chef - Your AI-Powered Kitchen Companion",
+  title: "Sous-Chef - Your Home Cooking AI Assistant",
   description:
     "Smart meal planning, pantry management, and recipe discovery. Join the waitlist for the future of cooking.",
   generator: "v0.app",

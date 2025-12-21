@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
+import { VideoCarousel } from "@/components/video-carousel"
 
 export default function HowItWorksPage() {
   return (
@@ -28,8 +29,8 @@ export default function HowItWorksPage() {
         <div className="text-center space-y-4 mb-12">
           <h1 className="text-4xl font-serif font-bold text-stone-800">How Sous-Chef Works</h1>
           <p className="text-stone-600 max-w-2xl mx-auto">
-            From scanning your first receipt to cooking your first AI-planned meal. Here's how to get the most out of
-            your kitchen companion.
+            From setting up automated receipt ingestion to cooking your first AI-planned meal. Here's how to get the
+            most out of your Sous-Chef.
           </p>
         </div>
 
@@ -48,7 +49,7 @@ export default function HowItWorksPage() {
               Pantry
             </TabsTrigger>
             <TabsTrigger
-              value="planning"
+              value="meals"
               className="data-[state=active]:bg-gold data-[state=active]:text-white rounded-full px-6 py-2 border border-stone-200 bg-white hover:bg-stone-50"
             >
               Meals & Planning
@@ -81,25 +82,23 @@ export default function HowItWorksPage() {
                   <div className="space-y-6">
                     <h3 className="text-2xl font-serif font-bold text-stone-800">Connect & Automate</h3>
                     <p className="text-stone-600 leading-relaxed">
-                      Start here: open the <span className="font-bold">☰ menu</span> →{" "}
-                      <span className="font-bold">Profile</span> → <span className="font-bold">Email & Receipts</span>.
-                    </p>
-                    <p className="text-stone-600 leading-relaxed">
-                      Connect the Gmail account that you use with your Whole Foods Market purchases (via Amazon Prime).
-                      Then at checkout in-store, scan your store-code so that you always receive an email receipt.
+                      Tap the hamburger menu icon in the top right, then select 'Profile' and navigate to 'Email &
+                      Receipts'. Connect the Gmail account that you use with your Whole Foods Market purchases (via
+                      Amazon Prime). Then at checkout in-store, scan your store-code so that you always receive an email
+                      receipt. By the time you get home your grocery items will be added to your pantry and enriched
+                      with nutrition, storage, and expiry information.
                     </p>
                     <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
                       <p className="text-stone-600">
-                        <span className="text-gold font-bold">Pro Tip:</span> Use the 'Sync recent receipts' button to
-                        import any Whole Foods receipts from the past 30 days. From now on, any future emailed receipt
-                        will auto-add items to your pantry by the time you get home.
+                        <span className="text-gold font-bold">Pro Tip:</span> For new users, use the 'Sync recent
+                        receipts' button to import any Whole Foods receipts from the past 30 days.
                       </p>
                     </div>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <img
-                        src="/images/hamburger-20icon.png"
+                        src="/images/hamburger-icon.png"
                         alt="Menu Icon"
                         className="rounded-xl shadow-lg border border-stone-200 w-full object-cover"
                       />
@@ -107,7 +106,7 @@ export default function HowItWorksPage() {
                     </div>
                     <div className="space-y-2">
                       <img
-                        src="/images/connect-20gmail.png"
+                        src="/images/connect-gmail.png"
                         alt="Connect Gmail Screen"
                         className="rounded-xl shadow-lg border border-stone-200 w-full object-cover"
                       />
@@ -125,33 +124,35 @@ export default function HowItWorksPage() {
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-2 gap-8 items-start">
                   <div className="space-y-6 order-2 md:order-1">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="relative rounded-xl shadow-lg border border-stone-200 overflow-hidden w-full aspect-[9/19.5] bg-black">
-                        <video controls className="w-full h-full object-contain -rotate-90 scale-[1.78]">
-                          <source src="https://blobs.vusercontent.net/blob/Pantry%20overview-rIo0Dq40kzcQqrgqVjqiO6fQ8bL8w4.mp4" type="video/mp4" />
-                        </video>
-                      </div>
-                      <div className="space-y-4">
-                        <div className="relative rounded-xl shadow-lg border border-stone-200 overflow-hidden w-full aspect-[9/19.5] bg-black">
-                          <video controls className="w-full h-full object-contain -rotate-90 scale-[1.78]">
-                            <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Barcode%20scan%20video-RsX2nBg0LmRAuXXiP06oY56gN3cTlm.mp4" type="video/mp4" />
-                          </video>
-                        </div>
-                        <video
-                          controls
-                          className="rounded-xl shadow-lg border border-stone-200 w-full aspect-[9/19.5] object-contain"
-                        >
-                          <source src="https://blobs.vusercontent.net/blob/Pantry%20Details%20Viedo-XLC7d90HBGzcVtzUpADXikJN6U2VAf.MP4" type="video/mp4" />
-                        </video>
-                      </div>
-                    </div>
+                    <VideoCarousel
+                      videos={[
+                        {
+                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pantry%20overview-59XuYMmhjXPMMkyTvLvoSH0KyWAexa.mp4",
+                          className: "w-full h-full object-contain -rotate-90 scale-[1.78]",
+                          containerClassName:
+                            "relative rounded-xl shadow-lg border border-stone-200 overflow-hidden aspect-[9/19.5] bg-black",
+                        },
+                        {
+                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pantry%20Details%20Viedo-2OzFC2DUtG2ksIha8P1LPHRcC10M5X.mp4",
+                          className: "rounded-xl w-full h-full object-contain",
+                          containerClassName:
+                            "relative rounded-xl shadow-lg border border-stone-200 overflow-hidden aspect-[9/19.5] bg-black",
+                        },
+                        {
+                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Barcode%20scan%20video-oK6W8cQebuCyqnM0D61DD8lZUadyHZ.mp4",
+                          className: "w-full h-full object-contain -rotate-90 scale-[1.78]",
+                          containerClassName:
+                            "relative rounded-xl shadow-lg border border-stone-200 overflow-hidden aspect-[9/19.5] bg-black",
+                        },
+                      ]}
+                    />
                   </div>
                   <div className="space-y-6 order-1 md:order-2">
                     <h3 className="text-2xl font-serif font-bold text-stone-800">Your Digital Pantry</h3>
                     <p className="text-stone-600 leading-relaxed">
-                      This is your pantry. We pull in your purchases and enrich each item using AI: we determine best
-                      storage practices, estimate expiration (and update when you use or freeze the item), and track how
-                      much you have left.
+                      We automatically pull in your purchases and enrich each item using AI: we determine best storage
+                      practices, estimate expiration (and update when you use or freeze the item), include nutrition
+                      facts, and track how much you have left.
                     </p>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-3">
@@ -168,7 +169,7 @@ export default function HowItWorksPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                         </span>
-                        <span className="text-stone-600">Auto-updates when you use or freeze items</span>
+                        <span className="text-stone-600">Auto-updates expiry date when you use or freeze items</span>
                       </li>
                       <li className="flex items-start gap-3">
                         <span className="bg-gold/10 text-gold p-1 rounded-full mt-0.5">
@@ -176,7 +177,37 @@ export default function HowItWorksPage() {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
                         </span>
-                        <span className="text-stone-600">Smart expiration tracking</span>
+                        <span className="text-stone-600">Easily edit any item details</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="bg-gold/10 text-gold p-1 rounded-full mt-0.5">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-stone-600">
+                          Search your pantry based on category, location, expiry, amount left, or by name
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="bg-gold/10 text-gold p-1 rounded-full mt-0.5">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-stone-600">
+                          Select multiple items at once to add to a meal or clear from your pantry
+                        </span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <span className="bg-gold/10 text-gold p-1 rounded-full mt-0.5">
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        </span>
+                        <span className="text-stone-600">
+                          Easily review your pantry stock from anywhere and add empty items to your shopping list
+                        </span>
                       </li>
                     </ul>
                   </div>
@@ -186,65 +217,75 @@ export default function HowItWorksPage() {
           </TabsContent>
 
           {/* Tab 3: Meals & Planning */}
-          <TabsContent value="planning" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <Card className="border-none shadow-none bg-transparent">
-              <CardContent className="p-0">
-                <div className="grid md:grid-cols-2 gap-8 items-start">
-                  <div className="space-y-6">
-                    <h3 className="text-2xl font-serif font-bold text-stone-800">Plan & Shop Smart</h3>
-                    <p className="text-stone-600 leading-relaxed">
-                      Time to plan and shop smart. Import your recipes: we scrape the URL, convert it into structured
-                      units, let you add notes and scale servings.
-                    </p>
-                    <div className="space-y-4">
-                      <h4 className="font-semibold text-stone-800">Key Features:</h4>
-                      <ul className="space-y-3 text-stone-600">
-                        <li className="flex gap-3">
-                          <span className="text-gold">•</span>
-                          <span>
-                            <strong className="text-stone-800">Weekly Planner:</strong> Drag recipes in, adjust number
-                            of people or servings.
-                          </span>
-                        </li>
-                        <li className="flex gap-3">
-                          <span className="text-gold">•</span>
-                          <span>
-                            <strong className="text-stone-800">Smart Scaling:</strong> If a recipe calls for 1 lb of
-                            chicken but you have 1.2 lb, set that amount without messing up everything else.
-                          </span>
-                        </li>
-                        <li className="flex gap-3">
-                          <span className="text-gold">•</span>
-                          <span>
-                            <strong className="text-stone-800">Auto-Shopping List:</strong> We check your pantry, figure
-                            out what you already have, identify what you're missing, and automatically build your
-                            shopping list.
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <img
-                        src="/images/img-9934.png"
-                        alt="Meal Planning"
-                        className="rounded-xl shadow-lg border border-stone-200 w-full"
-                      />
-                      <p className="text-xs text-center text-stone-500">Weekly Planner</p>
-                    </div>
-                    <div className="space-y-2">
-                      <img
-                        src="/images/img-9939.png"
-                        alt="Shopping List"
-                        className="rounded-xl shadow-lg border border-stone-200 w-full"
-                      />
-                      <p className="text-xs text-center text-stone-500">Smart Shopping List</p>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+          <TabsContent value="meals" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6 order-1 md:order-2">
+                <h2 className="text-3xl font-serif font-bold text-stone-800">Meal Planning on Autopilot</h2>
+                <p className="text-lg text-stone-600 leading-relaxed">
+                  Import any recipe, edit it fast, and add it to your week. Easily match ingredients to what you already
+                  have and add the rest to your shopping list. Scale your recipe on the amount of the ingredients you
+                  actually have. And after you cook, it automatically updates pantry inventory with amount you used.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-600 mt-1">•</span>
+                    <span className="text-foreground">Import recipes and edit in seconds</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-600 mt-1">•</span>
+                    <span className="text-foreground">Add recipes to your week in one tap</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-600 mt-1">•</span>
+                    <span className="text-foreground">Smart pantry matching: have vs. need</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-600 mt-1">•</span>
+                    <span className="text-foreground">Auto shopping list for missing items</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-600 mt-1">•</span>
+                    <span className="text-foreground">Scale servings to real pantry amounts</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-600 mt-1">•</span>
+                    <span className="text-foreground">Auto-consume ingredients as you plan/cook</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-600 mt-1">•</span>
+                    <span className="text-foreground">
+                      Save portions as leftovers (to a meal or pantry) with accurate nutrition, cost, and expiry
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-gold-600 mt-1">•</span>
+                    <span className="text-foreground">Full meal + weekly nutrition and cost totals tracking</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="space-y-6 order-2 md:order-1">
+                <VideoCarousel
+                  videos={[
+                    {
+                      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recipe_clip_full_3_fixed-MgZ9W9fjyl0sbhEizFHsLJ5fruWRPr.mp4",
+                      alt: "Recipe browsing",
+                    },
+                    {
+                      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/add_meal_clip_fixed-F2aSfMP4NAIGrOxjNT64kTeBlhPmkz.mp4",
+                      alt: "Adding meals to plan",
+                    },
+                    {
+                      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leftovers_fixed-geV1Jbq4iifZQ9OsrLRAEW6cztBcPk.mp4",
+                      alt: "Managing leftovers",
+                    },
+                    {
+                      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping_list_clip_fixed-ZiVYtsa7H55HKmU2i8PQyaR52YkRgP.mp4",
+                      alt: "Shopping list",
+                    },
+                  ]}
+                />
+              </div>
+            </div>
           </TabsContent>
 
           {/* Tab 4: AI Chat */}
@@ -253,25 +294,73 @@ export default function HowItWorksPage() {
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div className="space-y-6 order-2 md:order-1">
-                    <div className="relative rounded-xl overflow-hidden shadow-2xl border border-stone-200 max-w-xs mx-auto">
-                      <video controls className="w-full h-auto">
-                        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ai%20chat%20video%202-IUkdy5qX2eipVjMRQRQvbseHiiEjDN.mov" type="video/quicktime" />
-                        <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ai%20chat%20video%202-IUkdy5qX2eipVjMRQRQvbseHiiEjDN.mov" type="video/mp4" />
-                      </video>
-                    </div>
+                    <VideoCarousel
+                      videos={[
+                        {
+                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AI%20Chat%20Raw%20Fixed-7yZCMUxrFU7Uo3gN95J2eZDfYU5hkS.mp4",
+                        },
+                      ]}
+                    />
                   </div>
                   <div className="space-y-6 order-1 md:order-2">
-                    <h3 className="text-2xl font-serif font-bold text-stone-800">Meet Your AI Assistant</h3>
+                    <h3 className="text-2xl font-serif font-bold text-stone-800">
+                      AI Chat that actually knows what's in your pantry
+                    </h3>
                     <p className="text-stone-600 leading-relaxed">
-                      Use chat to plan meals based on what you already have. The AI has full access to your pantry
-                      database — it's your smarter cooking side-kick.
+                      Ask Sous-Chef what to cook, and it answers using your real inventory—what's in stock, what's
+                      expiring soon, and what you're missing. Get meal ideas, smart swaps, portion scaling, and
+                      nutrition/cost-aware suggestions in seconds.
                     </p>
+
+                    <div className="space-y-4">
+                      <h4 className="font-semibold text-stone-800">What it's great at</h4>
+                      <ul className="space-y-2 text-stone-600">
+                        <li className="flex items-start">
+                          <span className="text-[#C4A052] mr-2">•</span>
+                          <span>"What should I make tonight?" based on what you already have</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#C4A052] mr-2">•</span>
+                          <span>Use-soon mode: prioritize items closest to expiring</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#C4A052] mr-2">•</span>
+                          <span>Macros + calories: hit a target without guesswork</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#C4A052] mr-2">•</span>
+                          <span>Smart substitutions when you're missing something</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#C4A052] mr-2">•</span>
+                          <span>"Make it cheaper / higher protein / dairy-free" on demand</span>
+                        </li>
+                        <li className="flex items-start">
+                          <span className="text-[#C4A052] mr-2">•</span>
+                          <span>One-tap path to action: turn suggestions into a recipe + shopping list</span>
+                        </li>
+                      </ul>
+                    </div>
+
                     <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm space-y-3">
-                      <p className="font-semibold text-stone-800">Try asking:</p>
-                      <p className="text-stone-600 italic">"What can I cook with the chicken and broccoli I've got?"</p>
-                      <p className="text-stone-600 italic">
-                        "Suggest a meal under 500 calories with these ingredients."
-                      </p>
+                      <p className="font-semibold text-stone-800">Try asking</p>
+                      <div className="space-y-2">
+                        <p className="text-stone-600 italic">
+                          "What can I make in 20 minutes using what's expiring soon?"
+                        </p>
+                        <p className="text-stone-600 italic">
+                          "Give me 3 high-protein dinners from my pantry under 700 calories."
+                        </p>
+                        <p className="text-stone-600 italic">
+                          "What's an asian inspired meal I can make with the ingredients I have?"
+                        </p>
+                        <p className="text-stone-600 italic">
+                          "I want to use up my broccoli, what's French inspired meal I can make"
+                        </p>
+                        <p className="text-stone-600 italic">
+                          "What's the cheapest dinner I can make tonight from my pantry?"
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -285,10 +374,12 @@ export default function HowItWorksPage() {
               <CardContent className="p-0">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div className="space-y-6">
-                    <h3 className="text-2xl font-serif font-bold text-stone-800">For the Data Lovers</h3>
+                    <h3 className="text-2xl font-serif font-bold text-stone-800">For the Data People...</h3>
                     <p className="text-stone-600 leading-relaxed">
-                      On 'My Data' you'll see everything — purchases, items, meals, usage. Export as CSV and plug into
-                      spreadsheets.
+                      On 'My data' you'll see all your meal data: every meal, every ingredient, and all the
+                      corresponding nutrition and cost data. Export as CSV and plug into spreadsheets. And do whatever
+                      you want with it. Throw it in ChatGPT and see what it thinks about your diet and what you need to
+                      improve. Or track how many times you ate tacos because it takes only 15 minutes to make.
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="bg-white p-4 rounded-lg border border-stone-200">
@@ -303,12 +394,14 @@ export default function HowItWorksPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="relative rounded-xl overflow-hidden shadow-2xl border border-stone-200 max-w-xs mx-auto">
-                    <video controls className="w-full h-auto">
-                      <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/My%20Data%20Clip-N334ELP415z6dTDgMCyueMhkr4w8Cr.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
+                  <VideoCarousel
+                    videos={[
+                      {
+                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MyData%20Clip-vd222CuucV3PE8ivfarI241tlYvZv2.mp4",
+                        title: "My Data overview",
+                      },
+                    ]}
+                  />
                 </div>
               </CardContent>
             </Card>
@@ -324,7 +417,7 @@ export default function HowItWorksPage() {
                       <img
                         src="/images/household.png"
                         alt="Household Management"
-                        className="rounded-xl shadow-lg border border-stone-200 max-w-xs w-full"
+                        className="rounded-xl shadow-lg border border-stone-200 max-w-[324px] w-full"
                       />
                     </div>
                   </div>

@@ -5,6 +5,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
+import { CoverflowCarousel } from "@/components/coverflow-carousel"
 import { useState } from "react"
 
 export default function LandingPage() {
@@ -70,8 +71,8 @@ export default function LandingPage() {
           <div className="text-center space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl font-bold font-serif text-stone-800 leading-tight">
-                Your AI-powered
-                <span className="block text-gold">kitchen companion</span>
+                Your home cooking
+                <span className="block text-gold">AI assistant</span>
               </h1>
               <p className="text-xl text-stone-600 leading-relaxed max-w-4xl mx-auto text-justify">
                 Make your pantry a database. Scan in your existing food items. Automatically send your WholeFoods
@@ -130,14 +131,14 @@ export default function LandingPage() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <img
-                    src="/images/img-9928.png"
+                    src="/images/homescreen.png"
                     alt="Sous-Chef Home Dashboard"
                     className="rounded-2xl shadow-2xl border border-stone-200"
                   />
                 </div>
                 <div className="space-y-4 mt-8">
                   <img
-                    src="/images/img-9931.png"
+                    src="/images/pantry.png"
                     alt="Smart Pantry Management"
                     className="rounded-2xl shadow-2xl border border-stone-200"
                   />
@@ -169,48 +170,58 @@ export default function LandingPage() {
               </div>
             </Card>
           </div>
-
-          <div className="relative">
-            <div className="text-center space-y-8">
-              <h2 className="text-3xl font-bold font-serif text-stone-800">See Sous-Chef in action</h2>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <div className="space-y-2">
-                  <img
-                    src="/images/img-9929.png"
-                    alt="Pantry Overview"
-                    className="rounded-xl shadow-lg border border-stone-200 w-full"
-                  />
-                  <p className="text-sm text-stone-600 text-center">Pantry Overview</p>
-                </div>
-                <div className="space-y-2">
-                  <img
-                    src="/images/img-9934.png"
-                    alt="Meal Planning"
-                    className="rounded-xl shadow-lg border border-stone-200 w-full"
-                  />
-                  <p className="text-sm text-stone-600 text-center">Weekly Meal Planning</p>
-                </div>
-                <div className="space-y-2">
-                  <img
-                    src="/images/img-9937.png"
-                    alt="Recipe Analysis"
-                    className="rounded-xl shadow-lg border border-stone-200 w-full"
-                  />
-                  <p className="text-sm text-stone-600 text-center">Recipe Analysis</p>
-                </div>
-                <div className="space-y-2">
-                  <img
-                    src="/images/img-9939.png"
-                    alt="Shopping Lists"
-                    className="rounded-xl shadow-lg border border-stone-200 w-full"
-                  />
-                  <p className="text-sm text-stone-600 text-center">Smart Shopping Lists</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
+      </section>
+
+      {/* Video Showcase Section */}
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center space-y-4 mb-8">
+          <h2 className="text-4xl font-bold font-serif text-stone-800">See Sous-Chef in Action</h2>
+          <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+            Watch how Sous-Chef makes meal planning, pantry management, and cooking easier than ever
+          </p>
+        </div>
+
+        <CoverflowCarousel
+          videos={[
+            {
+              src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pantry%20overview-59XuYMmhjXPMMkyTvLvoSH0KyWAexa.mp4",
+              alt: "Digital Pantry Overview",
+            },
+            {
+              src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pantry%20Details%20Viedo-2OzFC2DUtG2ksIha8P1LPHRcC10M5X.mp4",
+              alt: "Pantry Item Details",
+            },
+            {
+              src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Barcode%20scan%20video-oK6W8cQebuCyqnM0D61DD8lZUadyHZ.mp4",
+              alt: "Barcode Scanning",
+            },
+            {
+              src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recipe_clip_full_3_fixed-MgZ9W9fjyl0sbhEizFHsLJ5fruWRPr.mp4",
+              alt: "Browse Recipes",
+            },
+            {
+              src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/add_meal_clip_fixed-F2aSfMP4NAIGrOxjNT64kTeBlhPmkz.mp4",
+              alt: "Add Meals to Plan",
+            },
+            {
+              src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leftovers_fixed-geV1Jbq4iifZQ9OsrLRAEW6cztBcPk.mp4",
+              alt: "Track Leftovers",
+            },
+            {
+              src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping_list_clip_fixed-ZiVYtsa7H55HKmU2i8PQyaR52YkRgP.mp4",
+              alt: "Shopping List",
+            },
+            {
+              src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AI%20Chat%20Raw%20Fixed-7yZCMUxrFU7Uo3gN95J2eZDfYU5hkS.mp4",
+              alt: "AI Chat Assistant",
+            },
+            {
+              src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MyData%20Clip-vd222CuucV3PE8ivfarI241tlYvZv2.mp4",
+              alt: "Data & Exports",
+            },
+          ]}
+        />
       </section>
 
       {/* Final CTA */}
