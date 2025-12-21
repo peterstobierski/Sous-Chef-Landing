@@ -25,7 +25,7 @@ export default function HowItWorksPage() {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-12 max-w-5xl">
+      <main className="container mx-auto px-4 pt-0 pb-4 max-w-5xl">
         <div className="text-center space-y-4 mb-12">
           <h1 className="text-4xl font-serif font-bold text-stone-800">How Sous-Chef Works</h1>
           <p className="text-stone-600 max-w-2xl mx-auto">
@@ -217,73 +217,76 @@ export default function HowItWorksPage() {
           </TabsContent>
 
           {/* Tab 3: Meals & Planning */}
-          <TabsContent value="meals" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6 order-1 md:order-2">
-                <h2 className="text-3xl font-serif font-bold text-stone-800">Meal Planning on Autopilot</h2>
-                <p className="text-lg text-stone-600 leading-relaxed">
-                  Import any recipe, edit it fast, and add it to your week. Easily match ingredients to what you already
-                  have and add the rest to your shopping list. Scale your recipe on the amount of the ingredients you
-                  actually have. And after you cook, it automatically updates pantry inventory with amount you used.
-                </p>
-                <ul className="space-y-3">
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold-600 mt-1">•</span>
-                    <span className="text-foreground">Import recipes and edit in seconds</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold-600 mt-1">•</span>
-                    <span className="text-foreground">Add recipes to your week in one tap</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold-600 mt-1">•</span>
-                    <span className="text-foreground">Smart pantry matching: have vs. need</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold-600 mt-1">•</span>
-                    <span className="text-foreground">Auto shopping list for missing items</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold-600 mt-1">•</span>
-                    <span className="text-foreground">Scale servings to real pantry amounts</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold-600 mt-1">•</span>
-                    <span className="text-foreground">Auto-consume ingredients as you plan/cook</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold-600 mt-1">•</span>
-                    <span className="text-foreground">
-                      Save portions as leftovers (to a meal or pantry) with accurate nutrition, cost, and expiry
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-gold-600 mt-1">•</span>
-                    <span className="text-foreground">Full meal + weekly nutrition and cost totals tracking</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="space-y-6 order-2 md:order-1">
-                <VideoCarousel
-                  videos={[
-                    {
-                      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recipe_clip_full_3_fixed-MgZ9W9fjyl0sbhEizFHsLJ5fruWRPr.mp4",
-                      alt: "Recipe browsing",
-                    },
-                    {
-                      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/add_meal_clip_fixed-F2aSfMP4NAIGrOxjNT64kTeBlhPmkz.mp4",
-                      alt: "Adding meals to plan",
-                    },
-                    {
-                      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leftovers_fixed-geV1Jbq4iifZQ9OsrLRAEW6cztBcPk.mp4",
-                      alt: "Managing leftovers",
-                    },
-                    {
-                      src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping_list_clip_fixed-ZiVYtsa7H55HKmU2i8PQyaR52YkRgP.mp4",
-                      alt: "Shopping list",
-                    },
-                  ]}
-                />
+          <TabsContent value="meals" className="mt-6 space-y-6">
+            <div className="mx-auto max-w-6xl">
+              <div className="flex flex-col lg:flex-row gap-8 items-start">
+                {/* Video carousel on the left */}
+                <div className="lg:w-1/3 flex-shrink-0">
+                  <VideoCarousel
+                    videos={[
+                      {
+                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recipe_clip_full_3_fixed-MgZ9W9fjyl0sbhEizFHsLJ5fruWRPr.mp4",
+                      },
+                      {
+                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/add_meal_clip_fixed-F2aSfMP4NAIGrOxjNT64kTeBlhPmkz.mp4",
+                      },
+                      {
+                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leftovers_fixed-geV1Jbq4iifZQ9OsrLRAEW6cztBcPk.mp4",
+                      },
+                      {
+                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping_list_clip_fixed-ZiVYtsa7H55HKmU2i8PQyaR52YkRgP.mp4",
+                      },
+                    ]}
+                  />
+                </div>
+
+                {/* Text content on the right */}
+                <div className="lg:w-2/3 space-y-6">
+                  <h3 className="text-2xl font-semibold text-stone-800">Meal Planning on Autopilot</h3>
+                  <p className="text-stone-600 leading-relaxed">
+                    Import any recipe, edit it fast, and add it to your week. Easily match ingredients to what you
+                    already have and add the rest to your shopping list. Scale your recipe on the amount of the
+                    ingredients you actually have. And after you cook, it automatically updates pantry inventory with
+                    amount you used.
+                  </p>
+
+                  <ul className="space-y-3 text-stone-600">
+                    <li className="flex items-start">
+                      <span className="text-[#C4A052] mr-2">•</span>
+                      <span>Import recipes and edit in seconds</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#C4A052] mr-2">•</span>
+                      <span>Add recipes to your week in one tap</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#C4A052] mr-2">•</span>
+                      <span>Smart pantry matching: have vs. need</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#C4A052] mr-2">•</span>
+                      <span>Auto shopping list for missing items</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#C4A052] mr-2">•</span>
+                      <span>Scale servings to real pantry amounts</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#C4A052] mr-2">•</span>
+                      <span>Auto-consume ingredients as you plan/cook</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#C4A052] mr-2">•</span>
+                      <span>
+                        Save portions as leftovers (to a meal or pantry) with accurate nutrition, cost, and expiry
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-[#C4A052] mr-2">•</span>
+                      <span>Full meal + weekly nutrition and cost totals tracking</span>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </TabsContent>
