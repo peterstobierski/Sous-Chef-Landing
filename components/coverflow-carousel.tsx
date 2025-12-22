@@ -109,7 +109,7 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
   return (
     <div className="relative w-full py-8 md:py-16">
       <div
-        className="relative h-[400px] md:h-[500px] flex items-center justify-center"
+        className="relative h-[600px] md:h-[700px] flex items-center justify-center"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -121,25 +121,29 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
             const isLeft = position === -1
             const isRight = position === 1
 
+            const mobileTranslateX = isCurrent ? swipeOffset : isLeft ? -300 + swipeOffset : 300 + swipeOffset
+
+            const desktopTranslateX = isCurrent ? swipeOffset : isLeft ? -350 + swipeOffset : 350 + swipeOffset
+
             return (
               <div
                 key={index}
                 className="absolute ease-out"
                 style={{
-                  transform: isCurrent
-                    ? `translateX(${swipeOffset}px) scale(1) rotateY(0deg)`
-                    : isLeft
-                      ? `translateX(${-350 + swipeOffset}px) scale(0.7) rotateY(25deg)`
-                      : `translateX(${350 + swipeOffset}px) scale(0.7) rotateY(-25deg)`,
+                  transform: isMobile
+                    ? `translateX(${mobileTranslateX}px) scale(${isCurrent ? 1 : 0.85})`
+                    : `translateX(${desktopTranslateX}px) scale(${isCurrent ? 1 : 0.7}) rotateY(${isLeft ? 25 : isRight ? -25 : 0}deg)`,
                   transition: isDragging.current ? "none" : "all 0.5s",
-                  opacity: isCurrent ? 1 : 0.5,
+                  opacity: isCurrent ? 1 : isMobile ? 0.3 : 0.5,
                   zIndex: isCurrent ? 30 : 10,
                   transformStyle: "preserve-3d",
                   pointerEvents: isCurrent ? "auto" : "none",
-                  display: !isCurrent && isMobile ? "none" : "block",
                 }}
               >
-                <div className="w-[280px] md:w-[280px] bg-black rounded-xl overflow-hidden shadow-2xl border-2 border-stone-200">
+                <div
+                  className="w-auto max-w-[280px] md:max-w-[280px] bg-black rounded-xl shadow-2xl border-2 border-stone-200"
+                  style={{ overflow: "visible" }}
+                >
                   <video
                     ref={(el) => (videoRefs.current[index] = el)}
                     src={videos[index].src}
@@ -148,7 +152,7 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
                     muted
                     loop
                     controls={!isMobile && isCurrent}
-                    className="w-full h-auto"
+                    className="w-full h-auto rounded-xl"
                   />
                 </div>
                 {isCurrent && <p className="text-center mt-3 text-stone-700 font-medium">{videos[index].alt}</p>}

@@ -111,7 +111,7 @@ export default function LandingPage() {
               </div>
             </Card>
 
-            <div className="mt-24 md:mt-8">
+            <div className="mt-6 md:mt-8">
               <CoverflowCarousel
                 videos={[
                   {
