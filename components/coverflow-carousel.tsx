@@ -14,9 +14,21 @@ interface CoverflowCarouselProps {
 
 export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
   const touchStartX = useRef<number>(0)
   const touchEndX = useRef<number>(0)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
 
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
@@ -99,7 +111,7 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
                   zIndex: isCurrent ? 30 : 10,
                   transformStyle: "preserve-3d",
                   pointerEvents: isCurrent ? "auto" : "none",
-                  display: !isCurrent && window.innerWidth < 768 ? "none" : "block",
+                  display: !isCurrent && isMobile ? "none" : "block",
                 }}
               >
                 <div className="w-[280px] md:w-[280px] bg-black rounded-xl overflow-hidden shadow-2xl border-2 border-stone-200">
