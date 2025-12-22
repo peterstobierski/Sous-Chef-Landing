@@ -1,5 +1,7 @@
 "use client"
 import { useState, useRef, useEffect } from "react"
+import type React from "react"
+
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -13,6 +15,8 @@ interface CoverflowCarouselProps {
 export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
+  const touchStartX = useRef<number>(0)
+  const touchEndX = useRef<number>(0)
 
   useEffect(() => {
     videoRefs.current.forEach((video, index) => {
@@ -34,6 +38,27 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
     setCurrentIndex((prev) => (prev === videos.length - 1 ? 0 : prev + 1))
   }
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX
+  }
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = () => {
+    const swipeThreshold = 50
+    const diff = touchStartX.current - touchEndX.current
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        goToNext()
+      } else {
+        goToPrevious()
+      }
+    }
+  }
+
   const getVisibleVideos = () => {
     const visible = []
     const total = videos.length
@@ -47,8 +72,13 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
   }
 
   return (
-    <div className="relative w-full py-16">
-      <div className="relative h-[500px] flex items-center justify-center">
+    <div className="relative w-full py-8 md:py-16">
+      <div
+        className="relative h-[400px] md:h-[500px] flex items-center justify-center"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <div className="relative w-full max-w-6xl h-full flex items-center justify-center">
           {getVisibleVideos().map(({ index, position }) => {
             const isCurrent = position === 0
@@ -69,9 +99,10 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
                   zIndex: isCurrent ? 30 : 10,
                   transformStyle: "preserve-3d",
                   pointerEvents: isCurrent ? "auto" : "none",
+                  display: !isCurrent && window.innerWidth < 768 ? "none" : "block",
                 }}
               >
-                <div className="w-[280px] bg-black rounded-xl overflow-hidden shadow-2xl border-2 border-stone-200">
+                <div className="w-[280px] md:w-[280px] bg-black rounded-xl overflow-hidden shadow-2xl border-2 border-stone-200">
                   <video
                     ref={(el) => (videoRefs.current[index] = el)}
                     src={videos[index].src}
@@ -92,20 +123,20 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
         <Button
           variant="outline"
           size="icon"
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white z-40 w-12 h-12"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white z-40 w-10 h-10 md:w-12 md:h-12"
           onClick={goToPrevious}
           aria-label="Previous video"
         >
-          <ChevronLeft className="h-6 w-6" />
+          <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
         </Button>
         <Button
           variant="outline"
           size="icon"
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white z-40 w-12 h-12"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white z-40 w-10 h-10 md:w-12 md:h-12"
           onClick={goToNext}
           aria-label="Next video"
         >
-          <ChevronRight className="h-6 w-6" />
+          <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
         </Button>
       </div>
 
