@@ -81,12 +81,16 @@ export default function HowItWorksPage() {
                 <div className="grid md:grid-cols-2 gap-8 items-start">
                   <div className="space-y-6">
                     <h3 className="text-2xl font-serif font-bold text-stone-800">Connect & Automate</h3>
+
                     <p className="text-stone-600 leading-relaxed">
-                      Tap the hamburger menu icon in the top right, then select 'Profile' and navigate to 'Email &
-                      Receipts'. Connect the Gmail account that you use with your Whole Foods Market purchases (via
-                      Amazon Prime). Then at checkout in-store, scan your store-code so that you always receive an email
-                      receipt. By the time you get home your grocery items will be added to your pantry and enriched
-                      with nutrition, storage, and expiry information.
+                      Start here: open the ☰ menu → Profile → Email & Receipts
+                    </p>
+
+                    <p className="text-stone-600 leading-relaxed">
+                      Connect the Gmail account that you use with your Whole Foods Market purchases (via Amazon Prime).
+                      Then at checkout in-store, scan your store-code so that you always receive an email receipt. By
+                      the time you get home your grocery items will be added to your pantry and enriched with nutrition,
+                      storage, and expiry information.
                     </p>
                     <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
                       <p className="text-stone-600">
