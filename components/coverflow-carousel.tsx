@@ -15,6 +15,7 @@ interface CoverflowCarouselProps {
 export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
+  const [swipeOffset, setSwipeOffset] = useState(0)
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
   const touchStartX = useRef<number>(0)
   const touchEndX = useRef<number>(0)
@@ -35,20 +36,17 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
     videoRefs.current.forEach((video, index) => {
       if (video) {
         if (index === currentIndex) {
-          video.removeAttribute("controls")
+          if (!isMobile) {
+            video.setAttribute("controls", "")
+          }
           video.play().catch(() => {})
-          setTimeout(() => {
-            if (video) {
-              video.setAttribute("controls", "")
-            }
-          }, 300)
         } else {
           video.pause()
           video.removeAttribute("controls")
         }
       }
     })
-  }, [currentIndex])
+  }, [currentIndex, isMobile])
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1))
@@ -62,17 +60,24 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
     touchStartX.current = e.touches[0].clientX
     touchEndX.current = e.touches[0].clientX
     isDragging.current = false
+    setSwipeOffset(0)
   }
 
   const handleTouchMove = (e: React.TouchEvent) => {
     touchEndX.current = e.touches[0].clientX
-    if (Math.abs(touchEndX.current - touchStartX.current) > 10) {
+    const diff = touchEndX.current - touchStartX.current
+
+    if (Math.abs(diff) > 10) {
       isDragging.current = true
+      setSwipeOffset(diff)
     }
   }
 
   const handleTouchEnd = () => {
-    if (!isDragging.current) return
+    if (!isDragging.current) {
+      setSwipeOffset(0)
+      return
+    }
 
     const swipeThreshold = 50
     const diff = touchStartX.current - touchEndX.current
@@ -85,6 +90,7 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
       }
     }
 
+    setSwipeOffset(0)
     isDragging.current = false
   }
 
@@ -118,13 +124,14 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
             return (
               <div
                 key={index}
-                className="absolute transition-all duration-500 ease-out"
+                className="absolute ease-out"
                 style={{
                   transform: isCurrent
-                    ? "translateX(0) scale(1) rotateY(0deg)"
+                    ? `translateX(${swipeOffset}px) scale(1) rotateY(0deg)`
                     : isLeft
-                      ? "translateX(-350px) scale(0.7) rotateY(25deg)"
-                      : "translateX(350px) scale(0.7) rotateY(-25deg)",
+                      ? `translateX(${-350 + swipeOffset}px) scale(0.7) rotateY(25deg)`
+                      : `translateX(${350 + swipeOffset}px) scale(0.7) rotateY(-25deg)`,
+                  transition: isDragging.current ? "none" : "all 0.5s",
                   opacity: isCurrent ? 1 : 0.5,
                   zIndex: isCurrent ? 30 : 10,
                   transformStyle: "preserve-3d",
@@ -140,6 +147,7 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
                     autoPlay={isCurrent}
                     muted
                     loop
+                    controls={!isMobile && isCurrent}
                     className="w-full h-auto"
                   />
                 </div>
