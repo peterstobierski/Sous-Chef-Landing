@@ -18,6 +18,7 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([])
   const touchStartX = useRef<number>(0)
   const touchEndX = useRef<number>(0)
+  const isDragging = useRef<boolean>(false)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -34,9 +35,16 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
     videoRefs.current.forEach((video, index) => {
       if (video) {
         if (index === currentIndex) {
+          video.removeAttribute("controls")
           video.play().catch(() => {})
+          setTimeout(() => {
+            if (video) {
+              video.setAttribute("controls", "")
+            }
+          }, 300)
         } else {
           video.pause()
+          video.removeAttribute("controls")
         }
       }
     })
@@ -52,13 +60,20 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX
+    touchEndX.current = e.touches[0].clientX
+    isDragging.current = false
   }
 
   const handleTouchMove = (e: React.TouchEvent) => {
     touchEndX.current = e.touches[0].clientX
+    if (Math.abs(touchEndX.current - touchStartX.current) > 10) {
+      isDragging.current = true
+    }
   }
 
   const handleTouchEnd = () => {
+    if (!isDragging.current) return
+
     const swipeThreshold = 50
     const diff = touchStartX.current - touchEndX.current
 
@@ -69,6 +84,8 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
         goToPrevious()
       }
     }
+
+    isDragging.current = false
   }
 
   const getVisibleVideos = () => {
@@ -90,6 +107,7 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        style={{ touchAction: "pan-y pinch-zoom" }}
       >
         <div className="relative w-full max-w-6xl h-full flex items-center justify-center">
           {getVisibleVideos().map(({ index, position }) => {
@@ -118,7 +136,6 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
                   <video
                     ref={(el) => (videoRefs.current[index] = el)}
                     src={videos[index].src}
-                    controls={isCurrent}
                     playsInline
                     autoPlay={isCurrent}
                     muted
