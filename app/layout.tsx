@@ -21,6 +21,10 @@ export const metadata: Metadata = {
   description:
     "Smart meal planning, pantry management, and recipe discovery. Join the waitlist for the future of cooking.",
   generator: "v0.app",
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
 }
 
 export default function RootLayout({
