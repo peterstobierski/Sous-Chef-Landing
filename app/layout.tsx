@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     "Smart meal planning, pantry management, and recipe discovery. Join the waitlist for the future of cooking.",
   generator: "v0.app",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/favicon.png",
+    apple: "/favicon.png",
   },
 }
 
