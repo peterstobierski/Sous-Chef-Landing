@@ -115,39 +115,39 @@ export default function LandingPage() {
               <CoverflowCarousel
                 videos={[
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pantry%20overview-59XuYMmhjXPMMkyTvLvoSH0KyWAexa.mp4",
+                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Pantry_overview.mp4",
                     alt: "Digital Pantry Overview",
                   },
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pantry%20Details%20Viedo-2OzFC2DUtG2ksIha8P1LPHRcC10M5X.mp4",
+                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Pantry_Details_Video.mp4",
                     alt: "Pantry Item Details",
                   },
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Barcode%20scan%20video-oK6W8cQebuCyqnM0D61DD8lZUadyHZ.mp4",
+                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Barcode%20scan%20video.mp4",
                     alt: "Barcode Scanning",
                   },
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recipe_clip_full_3_fixed-MgZ9W9fjyl0sbhEizFHsLJ5fruWRPr.mp4",
+                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/recipe_clip_full_3_fixed.mp4",
                     alt: "Browse Recipes",
                   },
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/add_meal_clip_fixed-F2aSfMP4NAIGrOxjNT64kTeBlhPmkz.mp4",
+                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/add_meal_clip_fixed.mp4",
                     alt: "Add Meals to Plan",
                   },
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leftovers_fixed-geV1Jbq4iifZQ9OsrLRAEW6cztBcPk.mp4",
+                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/leftovers_fixed.mp4",
                     alt: "Track Leftovers",
                   },
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping_list_clip_fixed-ZiVYtsa7H55HKmU2i8PQyaR52YkRgP.mp4",
+                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/shopping_list_clip_fixed.mp4",
                     alt: "Shopping List",
                   },
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AI%20Chat%20Raw%20Fixed-7yZCMUxrFU7Uo3gN95J2eZDfYU5hkS.mp4",
+                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/AI%20Chat%20Raw%20Fixed.mp4",
                     alt: "AI Chat Assistant",
                   },
                   {
-                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MyData%20Clip-vd222CuucV3PE8ivfarI241tlYvZv2.mp4",
+                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/MyData%20Clip.mp4",
                     alt: "Data & Exports",
                   },
                 ]}

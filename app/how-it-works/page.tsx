@@ -72,6 +72,12 @@ export default function HowItWorksPage() {
             >
               Households
             </TabsTrigger>
+            <TabsTrigger
+              value="pricing"
+              className="data-[state=active]:bg-gold data-[state=active]:text-white rounded-full px-6 py-2 border border-stone-200 bg-white hover:bg-stone-50"
+            >
+              Pricing (Beta)
+            </TabsTrigger>
           </TabsList>
 
           {/* Tab 1: Setup */}
@@ -126,24 +132,24 @@ export default function HowItWorksPage() {
           <TabsContent value="pantry" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <Card className="border-none shadow-none bg-transparent">
               <CardContent className="p-0">
-                <div className="grid md:grid-cols-2 gap-8 items-start">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div className="space-y-6 order-2 md:order-1">
                     <VideoCarousel
                       videos={[
                         {
-                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pantry%20overview-59XuYMmhjXPMMkyTvLvoSH0KyWAexa.mp4",
+                          src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Pantry_overview.mp4",
                           className: "w-full h-full object-contain -rotate-90 scale-[1.78]",
                           containerClassName:
                             "relative rounded-xl shadow-lg border border-stone-200 overflow-hidden aspect-[9/19.5] bg-black",
                         },
                         {
-                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pantry%20Details%20Viedo-2OzFC2DUtG2ksIha8P1LPHRcC10M5X.mp4",
+                          src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Pantry_Details_Video.mp4",
                           className: "rounded-xl w-full h-full object-contain",
                           containerClassName:
                             "relative rounded-xl shadow-lg border border-stone-200 overflow-hidden aspect-[9/19.5] bg-black",
                         },
                         {
-                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Barcode%20scan%20video-oK6W8cQebuCyqnM0D61DD8lZUadyHZ.mp4",
+                          src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Barcode%20scan%20video.mp4",
                           className: "w-full h-full object-contain -rotate-90 scale-[1.78]",
                           containerClassName:
                             "relative rounded-xl shadow-lg border border-stone-200 overflow-hidden aspect-[9/19.5] bg-black",
@@ -229,16 +235,16 @@ export default function HowItWorksPage() {
                   <VideoCarousel
                     videos={[
                       {
-                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/recipe_clip_full_3_fixed-MgZ9W9fjyl0sbhEizFHsLJ5fruWRPr.mp4",
+                        src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/recipe_clip_full_3_fixed.mp4",
                       },
                       {
-                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/add_meal_clip_fixed-F2aSfMP4NAIGrOxjNT64kTeBlhPmkz.mp4",
+                        src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/add_meal_clip_fixed.mp4",
                       },
                       {
-                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leftovers_fixed-geV1Jbq4iifZQ9OsrLRAEW6cztBcPk.mp4",
+                        src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/leftovers_fixed.mp4",
                       },
                       {
-                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping_list_clip_fixed-ZiVYtsa7H55HKmU2i8PQyaR52YkRgP.mp4",
+                        src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/shopping_list_clip_fixed.mp4",
                       },
                     ]}
                   />
@@ -304,7 +310,7 @@ export default function HowItWorksPage() {
                     <VideoCarousel
                       videos={[
                         {
-                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AI%20Chat%20Raw%20Fixed-7yZCMUxrFU7Uo3gN95J2eZDfYU5hkS.mp4",
+                          src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/AI%20Chat%20Raw%20Fixed.mp4",
                         },
                       ]}
                     />
@@ -446,6 +452,58 @@ export default function HowItWorksPage() {
                           <span className="text-gold">✓</span> Fewer duplicates, less waste
                         </li>
                       </ul>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
+
+          {/* Tab 7: Pricing (Beta) */}
+          <TabsContent value="pricing" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <Card className="border-none shadow-none bg-transparent">
+              <CardContent className="p-0">
+                <div className="max-w-3xl mx-auto">
+                  <div className="space-y-6">
+                    <h3 className="text-3xl font-serif font-bold text-stone-800 text-center">Pricing (Beta)</h3>
+
+                    <div className="bg-white p-8 rounded-xl border border-stone-200 shadow-sm space-y-6">
+                      <div className="space-y-4">
+                        <div className="flex items-start gap-3">
+                          <span className="text-[#C4A052] mt-1">•</span>
+                          <p className="text-stone-600 leading-relaxed flex-1">
+                            <span className="font-semibold text-stone-800">Beta is free for Williamsburg testers</span>{" "}
+                            (no credit card required)
+                          </p>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <span className="text-[#C4A052] mt-1">•</span>
+                          <p className="text-stone-600 leading-relaxed flex-1">
+                            After beta, Sous-Chef will be a{" "}
+                            <span className="font-semibold text-stone-800">low monthly subscription</span>
+                          </p>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <span className="text-[#C4A052] mt-1">•</span>
+                          <p className="text-stone-600 leading-relaxed flex-1">
+                            AI-heavy features (enrichment + recipe generation) will use{" "}
+                            <span className="font-semibold text-stone-800">optional credit packs</span> so light users
+                            don't subsidize power users
+                          </p>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <span className="text-[#C4A052] mt-1">•</span>
+                          <p className="text-stone-600 leading-relaxed flex-1">
+                            <span className="font-semibold text-stone-800">
+                              Beta testers get early supporter pricing
+                            </span>{" "}
+                            when we launch paid plans
+                          </p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
