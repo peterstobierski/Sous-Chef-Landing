@@ -128,7 +128,7 @@ export default function LandingPage() {
                   },
                   {
                     src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/recipe_clip_full_3_fixed.mp4",
-                    alt: "Browse Recipes",
+                    alt: "Import and Save Recipes",
                   },
                   {
                     src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/add_meal_clip_fixed.mp4",
