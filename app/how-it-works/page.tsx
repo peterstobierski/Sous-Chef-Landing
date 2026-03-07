@@ -368,10 +368,6 @@ export default function HowItWorksPage() {
                           </li>
                           <li className="flex items-start">
                             <span className="text-[#C4A052] mr-2">•</span>
-                            <span>Pantry Only or Pantry + Shop modes</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="text-[#C4A052] mr-2">•</span>
                             <span>Built-in leftovers planning</span>
                           </li>
                           <li className="flex items-start">
