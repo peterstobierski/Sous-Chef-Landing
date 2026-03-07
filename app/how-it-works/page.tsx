@@ -320,62 +320,75 @@ export default function HowItWorksPage() {
                   </div>
                   <div className="space-y-6 order-1 md:order-2">
                     <h3 className="text-2xl font-serif font-bold text-stone-800">
-                      AI Chat that actually knows what's in your pantry
+                      AI Chat + Meal Plan Studio
                     </h3>
                     <p className="text-stone-600 leading-relaxed">
-                      Ask Sous-Chef what to cook, and it answers using your real inventory—what's in stock, what's
-                      expiring soon, and what you're missing. Get meal ideas, smart swaps, portion scaling, and
-                      nutrition/cost-aware suggestions in seconds.
+                      Two ways to cook with Sous-Chef: AI Chat for quick decisions right now, and Meal Plan Studio when you want the whole week done in one shot.
                     </p>
 
+                    {/* AI Chat Section */}
                     <div className="space-y-4">
-                      <h4 className="font-semibold text-stone-800">What it's great at</h4>
-                      <ul className="space-y-2 text-stone-600">
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>"What should I make tonight?" based on what you already have</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>Use-soon mode: prioritize items closest to expiring</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>Macros + calories: hit a target without guesswork</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>Smart substitutions when you're missing something</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>"Make it cheaper / higher protein / dairy-free" on demand</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>One-tap path to action: turn suggestions into a recipe + shopping list</span>
-                        </li>
-                      </ul>
+                      <h4 className="font-semibold text-stone-800 text-lg">AI Chat</h4>
+                      <p className="text-stone-600">
+                        Ask a question, build a recipe from what you already have, and tweak it instantly.
+                      </p>
+                      <div className="space-y-2">
+                        <p className="font-medium text-stone-700">Great for</p>
+                        <ul className="space-y-2 text-stone-600">
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>"What can I make tonight?"</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>Smart substitutions + nutrition / cost tweaks</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>Turning a rough idea into a real recipe (and a shopping list if needed)</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-sm space-y-2">
+                        <p className="font-semibold text-stone-800">Try asking</p>
+                        <p className="text-stone-600 italic">"What can I make in 20 minutes using what's expiring soon?"</p>
+                        <p className="text-stone-600 italic">"Make this higher-protein and dairy-free."</p>
+                        <p className="text-stone-600 italic">"What's the cheapest dinner I can make tonight?"</p>
+                      </div>
                     </div>
 
-                    <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm space-y-3">
-                      <p className="font-semibold text-stone-800">Try asking</p>
+                    {/* Meal Plan Studio Section */}
+                    <div className="space-y-4">
+                      <h4 className="font-semibold text-stone-800 text-lg">Meal Plan Studio</h4>
+                      <p className="text-stone-600">
+                        Generate a full week of dinners from one prompt — then apply it in one tap.
+                      </p>
                       <div className="space-y-2">
-                        <p className="text-stone-600 italic">
-                          "What can I make in 20 minutes using what's expiring soon?"
-                        </p>
-                        <p className="text-stone-600 italic">
-                          "Give me 3 high-protein dinners from my pantry under 700 calories."
-                        </p>
-                        <p className="text-stone-600 italic">
-                          "What's an asian inspired meal I can make with the ingredients I have?"
-                        </p>
-                        <p className="text-stone-600 italic">
-                          "I want to use up my broccoli, what's French inspired meal I can make"
-                        </p>
-                        <p className="text-stone-600 italic">
-                          "What's the cheapest dinner I can make tonight from my pantry?"
-                        </p>
+                        <p className="font-medium text-stone-700">Great for</p>
+                        <ul className="space-y-2 text-stone-600">
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>A full week planned in seconds</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>Pantry Only or Pantry + Shop modes</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>Built-in leftovers planning</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>Regenerate only the days you want (keep the rest)</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-sm space-y-2">
+                        <p className="font-semibold text-stone-800">Try asking</p>
+                        <p className="text-stone-600 italic">"Plan 5 high-protein dinners for this week."</p>
+                        <p className="text-stone-600 italic">"Pantry only: use what I already have."</p>
+                        <p className="text-stone-600 italic">"Redo just Wed/Thu with faster meals."</p>
                       </div>
                     </div>
                   </div>
