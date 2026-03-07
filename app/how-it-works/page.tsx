@@ -108,7 +108,7 @@ export default function HowItWorksPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <img
-                        src="/images/hamburger-icon.png"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Menu%20Navigation-MJrSIS6qq1iDf9eLIvzqXUQGtfgsPU.png"
                         alt="Menu Icon"
                         className="rounded-xl shadow-lg border border-stone-200 w-full object-cover"
                       />
