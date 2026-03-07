@@ -68,7 +68,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-2 pb-6">
         <div className="space-y-12">
-          <div className="text-center space-y-8">
+          <div className="text-center space-y-6">
             <div className="space-y-4">
               <h1 className="text-5xl font-bold font-serif text-stone-800 leading-tight">
                 Your home cooking
@@ -111,7 +111,7 @@ export default function LandingPage() {
               </div>
             </Card>
 
-            <div className="mt-6 md:mt-8">
+            <div className="mt-4 md:mt-6">
               <CoverflowCarousel
                 videos={[
                   {
