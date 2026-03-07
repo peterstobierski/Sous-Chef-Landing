@@ -330,7 +330,7 @@ export default function HowItWorksPage() {
                     <div className="space-y-4">
                       <h4 className="font-semibold text-stone-800 text-lg">AI Chat</h4>
                       <p className="text-stone-600">
-                        Ask a question, build a recipe from what you already have, and tweak it instantly.
+                        Ask about your inventory, cooking help, and build meals
                       </p>
                       <div className="space-y-2">
                         <p className="font-medium text-stone-700">Great for</p>
