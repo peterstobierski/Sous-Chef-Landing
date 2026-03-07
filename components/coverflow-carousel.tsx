@@ -107,7 +107,7 @@ export function CoverflowCarousel({ videos }: CoverflowCarouselProps) {
   }
 
   return (
-    <div className="relative w-full py-8 md:py-16">
+    <div className="relative w-full py-1 md:py-2">
       <div
         className="relative h-[600px] md:h-[700px] flex items-center justify-center"
         onTouchStart={handleTouchStart}

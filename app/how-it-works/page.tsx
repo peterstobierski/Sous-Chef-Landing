@@ -108,7 +108,7 @@ export default function HowItWorksPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <img
-                        src="/images/hamburger-icon.png"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Menu%20Navigation-MJrSIS6qq1iDf9eLIvzqXUQGtfgsPU.png"
                         alt="Menu Icon"
                         className="rounded-xl shadow-lg border border-stone-200 w-full object-cover"
                       />
@@ -137,19 +137,19 @@ export default function HowItWorksPage() {
                     <VideoCarousel
                       videos={[
                         {
-                          src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Pantry_overview.mp4",
+                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Digital%20Pantry%20Overview-8EnvwNOnyynQqVjVHlA21CjkMHZBYy.mp4",
                           className: "w-full h-full object-contain -rotate-90 scale-[1.78]",
                           containerClassName:
                             "relative rounded-xl shadow-lg border border-stone-200 overflow-hidden aspect-[9/19.5] bg-black",
                         },
                         {
-                          src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Pantry_Details_Video.mp4",
+                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pantry_Details_Video-6UBkbJibM9PmHFYv8ZPDGN8C9dSC6l.mp4",
                           className: "rounded-xl w-full h-full object-contain",
                           containerClassName:
                             "relative rounded-xl shadow-lg border border-stone-200 overflow-hidden aspect-[9/19.5] bg-black",
                         },
                         {
-                          src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Barcode%20scan%20video.mp4",
+                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Barcode%20scan%20video-Fi6FyNZkVK5UcSI6XnSn2JcVIMMUSD.mp4",
                           className: "w-full h-full object-contain -rotate-90 scale-[1.78]",
                           containerClassName:
                             "relative rounded-xl shadow-lg border border-stone-200 overflow-hidden aspect-[9/19.5] bg-black",
@@ -238,13 +238,13 @@ export default function HowItWorksPage() {
                         src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/recipe_clip_full_3_fixed.mp4",
                       },
                       {
-                        src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/add_meal_clip_fixed.mp4",
+                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/add_meal_clip_fixed-7UeGScfPVV9MFFSZMDSlFe0ZLuKJuq.mp4",
                       },
                       {
-                        src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/leftovers_fixed.mp4",
+                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leftovers_fixed-Ru6TzTklyjNfvMXaltnCRG5RHCB8Gv.mp4",
                       },
                       {
-                        src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/shopping_list_clip_fixed.mp4",
+                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping_list_clip_fixed-PVTmwJWNDf6jfjAZam0v24F0YjbZmC.mp4",
                       },
                     ]}
                   />
@@ -310,69 +310,77 @@ export default function HowItWorksPage() {
                     <VideoCarousel
                       videos={[
                         {
-                          src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/AI%20Chat%20Raw%20Fixed.mp4",
+                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AI%20Chat%20Raw-GZDfM9WpeDKszAOkRpXckL1AAZg3KO.mp4",
+                        },
+                        {
+                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Meal%20Plan%20Studio-vF4gPlgruQoNzQa3FYSSqFNGq3kVsI.mp4",
                         },
                       ]}
                     />
                   </div>
                   <div className="space-y-6 order-1 md:order-2">
                     <h3 className="text-2xl font-serif font-bold text-stone-800">
-                      AI Chat that actually knows what's in your pantry
+                      AI Chat + Meal Plan Studio
                     </h3>
                     <p className="text-stone-600 leading-relaxed">
-                      Ask Sous-Chef what to cook, and it answers using your real inventory—what's in stock, what's
-                      expiring soon, and what you're missing. Get meal ideas, smart swaps, portion scaling, and
-                      nutrition/cost-aware suggestions in seconds.
+                      Two ways to cook with Sous-Chef: AI Chat for quick decisions right now, and Meal Plan Studio when you want the whole week done in one shot.
                     </p>
 
+                    {/* AI Chat Section */}
                     <div className="space-y-4">
-                      <h4 className="font-semibold text-stone-800">What it's great at</h4>
-                      <ul className="space-y-2 text-stone-600">
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>"What should I make tonight?" based on what you already have</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>Use-soon mode: prioritize items closest to expiring</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>Macros + calories: hit a target without guesswork</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>Smart substitutions when you're missing something</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>"Make it cheaper / higher protein / dairy-free" on demand</span>
-                        </li>
-                        <li className="flex items-start">
-                          <span className="text-[#C4A052] mr-2">•</span>
-                          <span>One-tap path to action: turn suggestions into a recipe + shopping list</span>
-                        </li>
-                      </ul>
+                      <h4 className="font-semibold text-stone-800 text-lg">AI Chat</h4>
+                      <p className="text-stone-600">
+                        Ask about your inventory, cooking help, and build meals
+                      </p>
+                      <div className="space-y-2">
+                        <p className="font-medium text-stone-700">Great for</p>
+                        <ul className="space-y-2 text-stone-600">
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>Creating a recipe with ingredients you already have</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>Building and tweaking a recipe based on what you want</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-sm space-y-2">
+                        <p className="font-semibold text-stone-800">Try asking</p>
+                        <p className="text-stone-600 italic">"What can I make in 20 minutes using what's expiring soon?"</p>
+                        <p className="text-stone-600 italic">"Make this higher-protein and dairy-free."</p>
+                        <p className="text-stone-600 italic">"What's the cheapest dinner I can make tonight?"</p>
+                      </div>
                     </div>
 
-                    <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm space-y-3">
-                      <p className="font-semibold text-stone-800">Try asking</p>
+                    {/* Meal Plan Studio Section */}
+                    <div className="space-y-4">
+                      <h4 className="font-semibold text-stone-800 text-lg">Meal Plan Studio</h4>
+                      <p className="text-stone-600">
+                        Generate a full week of dinners from one prompt — then apply it in one tap.
+                      </p>
                       <div className="space-y-2">
-                        <p className="text-stone-600 italic">
-                          "What can I make in 20 minutes using what's expiring soon?"
-                        </p>
-                        <p className="text-stone-600 italic">
-                          "Give me 3 high-protein dinners from my pantry under 700 calories."
-                        </p>
-                        <p className="text-stone-600 italic">
-                          "What's an asian inspired meal I can make with the ingredients I have?"
-                        </p>
-                        <p className="text-stone-600 italic">
-                          "I want to use up my broccoli, what's French inspired meal I can make"
-                        </p>
-                        <p className="text-stone-600 italic">
-                          "What's the cheapest dinner I can make tonight from my pantry?"
-                        </p>
+                        <p className="font-medium text-stone-700">Great for</p>
+                        <ul className="space-y-2 text-stone-600">
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>A full week planned in seconds</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>Built-in leftovers planning</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="text-[#C4A052] mr-2">•</span>
+                            <span>Regenerate only the days you want (keep the rest)</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-sm space-y-2">
+                        <p className="font-semibold text-stone-800">Try asking</p>
+                        <p className="text-stone-600 italic">"Plan 5 high-protein dinners for this week."</p>
+                        <p className="text-stone-600 italic">"Pantry only: use what I already have."</p>
+                        <p className="text-stone-600 italic">"Redo just Wed/Thu with faster meals."</p>
                       </div>
                     </div>
                   </div>
@@ -410,7 +418,7 @@ export default function HowItWorksPage() {
                   <VideoCarousel
                     videos={[
                       {
-                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MyData%20Clip-vd222CuucV3PE8ivfarI241tlYvZv2.mp4",
+                        src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/My%20Data%20Clip-vQjyrvDTyAqOMjIkrVD3bAJdBMveWE.mp4",
                         title: "My Data overview",
                       },
                     ]}

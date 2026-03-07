@@ -67,8 +67,8 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-2 pb-6">
-        <div className="space-y-12">
-          <div className="text-center space-y-8">
+        <div className="space-y-6">
+          <div className="text-center space-y-2">
             <div className="space-y-4">
               <h1 className="text-5xl font-bold font-serif text-stone-800 leading-tight">
                 Your home cooking
@@ -111,19 +111,19 @@ export default function LandingPage() {
               </div>
             </Card>
 
-            <div className="mt-6 md:mt-8">
+            <div className="mt-1 md:mt-2">
               <CoverflowCarousel
                 videos={[
                   {
-                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Pantry_overview.mp4",
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Digital%20Pantry%20Overview-8EnvwNOnyynQqVjVHlA21CjkMHZBYy.mp4",
                     alt: "Digital Pantry Overview",
                   },
                   {
-                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Pantry_Details_Video.mp4",
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pantry_Details_Video-6UBkbJibM9PmHFYv8ZPDGN8C9dSC6l.mp4",
                     alt: "Pantry Item Details",
                   },
                   {
-                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/Barcode%20scan%20video.mp4",
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Barcode%20scan%20video-Fi6FyNZkVK5UcSI6XnSn2JcVIMMUSD.mp4",
                     alt: "Barcode Scanning",
                   },
                   {
@@ -131,23 +131,27 @@ export default function LandingPage() {
                     alt: "Import and Save Recipes",
                   },
                   {
-                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/add_meal_clip_fixed.mp4",
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/add_meal_clip_fixed-7UeGScfPVV9MFFSZMDSlFe0ZLuKJuq.mp4",
                     alt: "Add Meals to Plan",
                   },
                   {
-                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/leftovers_fixed.mp4",
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/leftovers_fixed-Ru6TzTklyjNfvMXaltnCRG5RHCB8Gv.mp4",
                     alt: "Track Leftovers",
                   },
                   {
-                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/shopping_list_clip_fixed.mp4",
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/shopping_list_clip_fixed-PVTmwJWNDf6jfjAZam0v24F0YjbZmC.mp4",
                     alt: "Shopping List",
                   },
                   {
-                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/AI%20Chat%20Raw%20Fixed.mp4",
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AI%20Chat%20Raw-GZDfM9WpeDKszAOkRpXckL1AAZg3KO.mp4",
                     alt: "AI Chat Assistant",
                   },
                   {
-                    src: "https://ym5nqntuwqb4unmg.public.blob.vercel-storage.com/MyData%20Clip.mp4",
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Meal%20Plan%20Studio-vF4gPlgruQoNzQa3FYSSqFNGq3kVsI.mp4",
+                    alt: "Meal Plan Studio",
+                  },
+                  {
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/My%20Data%20Clip-vQjyrvDTyAqOMjIkrVD3bAJdBMveWE.mp4",
                     alt: "Data & Exports",
                   },
                 ]}
