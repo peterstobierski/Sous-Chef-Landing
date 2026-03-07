@@ -337,15 +337,11 @@ export default function HowItWorksPage() {
                         <ul className="space-y-2 text-stone-600">
                           <li className="flex items-start">
                             <span className="text-[#C4A052] mr-2">•</span>
-                            <span>"What can I make tonight?"</span>
+                            <span>Creating a recipe with ingredients you already have</span>
                           </li>
                           <li className="flex items-start">
                             <span className="text-[#C4A052] mr-2">•</span>
-                            <span>Smart substitutions + nutrition / cost tweaks</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="text-[#C4A052] mr-2">•</span>
-                            <span>Turning a rough idea into a real recipe (and a shopping list if needed)</span>
+                            <span>Building and tweaking a recipe based on what you want</span>
                           </li>
                         </ul>
                       </div>
