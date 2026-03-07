@@ -312,6 +312,9 @@ export default function HowItWorksPage() {
                         {
                           src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AI%20Chat%20Raw-GZDfM9WpeDKszAOkRpXckL1AAZg3KO.mp4",
                         },
+                        {
+                          src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Meal%20Plan%20Studio-vF4gPlgruQoNzQa3FYSSqFNGq3kVsI.mp4",
+                        },
                       ]}
                     />
                   </div>

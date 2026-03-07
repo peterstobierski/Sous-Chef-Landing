@@ -147,6 +147,10 @@ export default function LandingPage() {
                     alt: "AI Chat Assistant",
                   },
                   {
+                    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Meal%20Plan%20Studio-vF4gPlgruQoNzQa3FYSSqFNGq3kVsI.mp4",
+                    alt: "Meal Plan Studio",
+                  },
+                  {
                     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/My%20Data%20Clip-vQjyrvDTyAqOMjIkrVD3bAJdBMveWE.mp4",
                     alt: "Data & Exports",
                   },
