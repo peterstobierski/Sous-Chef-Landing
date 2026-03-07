@@ -67,7 +67,7 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 pt-2 pb-6">
-        <div className="space-y-12">
+        <div className="space-y-6">
           <div className="text-center space-y-2">
             <div className="space-y-4">
               <h1 className="text-5xl font-bold font-serif text-stone-800 leading-tight">
