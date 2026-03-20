@@ -147,6 +147,14 @@ export default function HowItWorksPage() {
                     <p className="text-stone-600 leading-relaxed">
                       In Gmail on desktop, go to <span className="font-medium">Settings → See all settings → Forwarding and POP/IMAP</span>, then click "Add a forwarding address." Paste in your unique Sous-Chef email from the app.
                     </p>
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 space-y-2">
+                      <p className="text-sm text-amber-800">
+                        <span className="font-semibold">Note:</span> This must be the email you receive your Whole Foods receipts from. Which is the email for your Amazon account.
+                      </p>
+                      <p className="text-sm text-amber-800">
+                        <span className="font-semibold">Tip:</span> When shopping at Whole Foods, use a credit card linked to the account or scan your in-store code at checkout to receive your receipt to your email.
+                      </p>
+                    </div>
                   </div>
                   <div className="space-y-4">
                     <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden">
