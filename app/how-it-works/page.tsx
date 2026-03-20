@@ -262,7 +262,7 @@ export default function HowItWorksPage() {
                       </div>
                     </div>
                     <p className="text-stone-600 text-sm">
-                      Click "Create filter," then check "Forward it to" and select your verified Sous-Chef forwarding email.
+                      Copy and paste the text above in the From and Subject fields then click "Create filter". Next check "Forward it to", select your verified Sous-Chef forwarding email, and create filter.
                     </p>
                   </div>
                   <div className="space-y-4">
@@ -308,7 +308,7 @@ export default function HowItWorksPage() {
                       </div>
                     </div>
                     <p className="text-stone-600 text-sm">
-                      Click "Create filter," then check "Forward it to" and select your verified Sous-Chef forwarding email.
+                      Copy and paste the text above in the From and Subject fields then click "Create filter". Next check "Forward it to", select your verified Sous-Chef forwarding email, and create filter.
                     </p>
                   </div>
                   <div className="space-y-2">
