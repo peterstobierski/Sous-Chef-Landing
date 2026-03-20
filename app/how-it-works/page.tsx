@@ -219,6 +219,33 @@ export default function HowItWorksPage() {
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
                       <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold text-white font-bold text-sm">5</span>
+                      <h3 className="text-xl font-semibold text-stone-800">Navigate to Filters and Blocked Addresses</h3>
+                    </div>
+                    <p className="text-stone-600 leading-relaxed">
+                      In Gmail Settings, click on the <span className="font-medium">Filters and Blocked Addresses</span> tab. Then click <span className="font-medium">"Create a new filter"</span> to start setting up your first filter.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Create%20a%20new%20filter-b08zsmzjkSu9XkrmHqlP5ofgrhcc1l.png"
+                        alt="Gmail Filters and Blocked Addresses tab with Create a new filter link"
+                        className="w-full object-cover"
+                      />
+                    </div>
+                    <p className="text-xs text-center text-stone-500">Click "Create a new filter" to begin setting up your email forwarding rules.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Step 6 */}
+            <Card className="border border-stone-200 shadow-sm bg-white overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                <div className="grid md:grid-cols-2 gap-8 items-start">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold text-white font-bold text-sm">6</span>
                       <h3 className="text-xl font-semibold text-stone-800">Create Filter 1 for Whole Foods receipt emails</h3>
                     </div>
                     <p className="text-stone-600 leading-relaxed">
@@ -258,13 +285,13 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            {/* Step 6 */}
+            {/* Step 7 */}
             <Card className="border border-stone-200 shadow-sm bg-white overflow-hidden">
               <CardContent className="p-6 md:p-8">
                 <div className="grid md:grid-cols-2 gap-8 items-start">
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold text-white font-bold text-sm">6</span>
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold text-white font-bold text-sm">7</span>
                       <h3 className="text-xl font-semibold text-stone-800">Create Filter 2 for Amazon delivery emails</h3>
                     </div>
                     <p className="text-stone-600 leading-relaxed">
@@ -297,7 +324,7 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            {/* Step 7 */}
+            {/* Step 8 - Final */}
             <Card className="border border-stone-200 shadow-sm bg-white overflow-hidden">
               <CardContent className="p-6 md:p-8">
                 <div className="grid md:grid-cols-2 gap-8 items-start">
