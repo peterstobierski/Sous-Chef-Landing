@@ -172,7 +172,7 @@ export default function HowItWorksPage() {
                       <h3 className="text-xl font-semibold text-stone-800">Confirm the forwarding address</h3>
                     </div>
                     <p className="text-stone-600 leading-relaxed">
-                      After you add the forwarding address, Sous-Chef will send a confirmation email from <span className="font-medium">support@sous-chef.xyz</span>. Open that email and confirm the forwarding address to finish verification.
+                      After you add the forwarding address, Sous-Chef will send a confirmation email to your Sous-Chef login email from <span className="font-medium">support@sous-chef.xyz</span>. Open that email and confirm the forwarding address to finish verification.
                     </p>
                     <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 space-y-2">
                       <p className="text-sm text-amber-800">
