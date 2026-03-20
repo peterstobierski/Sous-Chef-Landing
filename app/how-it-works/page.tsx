@@ -386,26 +386,7 @@ export default function HowItWorksPage() {
               </CardContent>
             </Card>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center px-8 py-3 bg-gold hover:bg-gold/90 text-white font-semibold rounded-full transition-colors"
-              >
-                Get Sous-Chef
-              </Link>
-              <Link
-                href="#pantry"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.querySelector('[value="pantry"]')?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
-                }}
-                className="inline-flex items-center justify-center px-8 py-3 border border-stone-300 hover:bg-stone-50 text-stone-700 font-semibold rounded-full transition-colors"
-              >
-                See the app
-              </Link>
-            </div>
-          </TabsContent>
+            </TabsContent>
 
           {/* Tab 2: Pantry */}
           <TabsContent value="pantry" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
