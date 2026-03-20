@@ -80,52 +80,292 @@ export default function HowItWorksPage() {
             </TabsTrigger>
           </TabsList>
 
-          {/* Tab 1: Setup */}
+          {/* Tab 1: Setup - Gmail Forwarding */}
           <TabsContent value="setup" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <Card className="border-none shadow-none bg-transparent">
-              <CardContent className="p-0">
+            {/* Section Header */}
+            <div className="text-center space-y-4">
+              <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Takes about 2–3 minutes
+              </div>
+              <h2 className="text-3xl font-serif font-bold text-stone-800">Set up Gmail forwarding</h2>
+              <p className="text-stone-600 max-w-2xl mx-auto">
+                Connect Sous-Chef in a few minutes by forwarding matching Whole Foods receipt emails to your unique Sous-Chef address.
+              </p>
+            </div>
+
+            {/* Step 1 */}
+            <Card className="border border-stone-200 shadow-sm bg-white overflow-hidden">
+              <CardContent className="p-6 md:p-8">
                 <div className="grid md:grid-cols-2 gap-8 items-start">
-                  <div className="space-y-6">
-                    <h3 className="text-2xl font-serif font-bold text-stone-800">Connect & Automate</h3>
-
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold text-white font-bold text-sm">1</span>
+                      <h3 className="text-xl font-semibold text-stone-800">Copy your unique Sous-Chef email</h3>
+                    </div>
                     <p className="text-stone-600 leading-relaxed">
-                      Start here: open the ☰ menu → Profile → Email & Receipts
+                      Open the Email & Receipts screen in the Sous-Chef app and tap "Copy Forwarding Email." This gives you your personal Sous-Chef forwarding address.
                     </p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden bg-stone-900 flex justify-center">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/connect-gmail-XylglivTa8sgg5snEGEvlXCnCr7abW.png"
+                        alt="Email & Receipts screen in Sous-Chef app"
+                        className="w-auto max-h-[400px] object-contain"
+                      />
+                    </div>
+                    <p className="text-xs text-center text-stone-500">Your personal forwarding address lives in the app under Email & Receipts.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
 
+            {/* Step 2 */}
+            <Card className="border border-stone-200 shadow-sm bg-white overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                <div className="grid md:grid-cols-2 gap-8 items-start">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold text-white font-bold text-sm">2</span>
+                      <h3 className="text-xl font-semibold text-stone-800">Add the forwarding address in Gmail</h3>
+                    </div>
                     <p className="text-stone-600 leading-relaxed">
-                      Connect the Gmail account that you use with your Whole Foods Market purchases (via Amazon Prime).
-                      Then at checkout in-store, scan your store-code so that you always receive an email receipt. By
-                      the time you get home your grocery items will be added to your pantry and enriched with nutrition,
-                      storage, and expiry information.
+                      In Gmail on desktop, go to <span className="font-medium">Settings → See all settings → Forwarding and POP/IMAP</span>, then click "Add a forwarding address." Paste in your unique Sous-Chef email from the app.
                     </p>
-                    <div className="bg-white p-6 rounded-xl border border-stone-200 shadow-sm">
-                      <p className="text-stone-600">
-                        <span className="text-gold font-bold">Pro Tip:</span> For new users, use the 'Sync recent
-                        receipts' button to import any Whole Foods receipts from the past 30 days.
+                  </div>
+                  <div className="space-y-4">
+                    <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gmail%20fowarding%20gif%202-eiG3qAt3pHR80vsOJNjyzmdsXFwDSb.gif"
+                        alt="Gmail navigation to forwarding settings"
+                        className="w-full object-cover"
+                      />
+                    </div>
+                    <p className="text-xs text-center text-stone-500">Add your unique Sous-Chef email in Gmail's Forwarding and POP/IMAP settings.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Step 3 */}
+            <Card className="border border-stone-200 shadow-sm bg-white overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                <div className="grid md:grid-cols-2 gap-8 items-start">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold text-white font-bold text-sm">3</span>
+                      <h3 className="text-xl font-semibold text-stone-800">Confirm the forwarding address</h3>
+                    </div>
+                    <p className="text-stone-600 leading-relaxed">
+                      After you add the forwarding address, Sous-Chef will send a confirmation email from <span className="font-medium">support@sous-chef.xyz</span>. Open that email and confirm the forwarding address to finish verification.
+                    </p>
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 space-y-2">
+                      <p className="text-sm text-amber-800">
+                        <span className="font-semibold">Note:</span> Gmail requires this confirmation before it allows filters to forward email to a new address.
+                      </p>
+                      <p className="text-sm text-amber-800">
+                        Make sure the forwarding address you confirm is the exact same one you copied from the Sous-Chef app.
                       </p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <img
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Menu%20Navigation-MJrSIS6qq1iDf9eLIvzqXUQGtfgsPU.png"
-                        alt="Menu Icon"
-                        className="rounded-xl shadow-lg border border-stone-200 w-full object-cover"
-                      />
-                      <p className="text-xs text-center text-stone-500">Menu Navigation</p>
-                    </div>
-                    <div className="space-y-2">
-                      <img
-                        src="/images/connect-gmail.png"
-                        alt="Connect Gmail Screen"
-                        className="rounded-xl shadow-lg border border-stone-200 w-full object-cover"
-                      />
-                      <p className="text-xs text-center text-stone-500">Email Integration</p>
+                  <div className="flex items-center justify-center">
+                    <div className="bg-stone-50 border border-stone-200 rounded-xl p-8 text-center space-y-4">
+                      <div className="w-16 h-16 mx-auto bg-emerald-100 rounded-full flex items-center justify-center">
+                        <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                      <p className="text-stone-600 font-medium">Check your inbox for a confirmation email from support@sous-chef.xyz</p>
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
+            {/* Step 4 */}
+            <Card className="border border-stone-200 shadow-sm bg-white overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                <div className="grid md:grid-cols-2 gap-8 items-start">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold text-white font-bold text-sm">4</span>
+                      <h3 className="text-xl font-semibold text-stone-800">Make sure the verified forwarding address is available in Gmail</h3>
+                    </div>
+                    <p className="text-stone-600 leading-relaxed">
+                      Return to Gmail's Forwarding and POP/IMAP settings and make sure your Sous-Chef forwarding email now appears as a verified forwarding address. You'll use this same address when creating your filters.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Select%20Verified%20Foward%20Email-WSYrmvCE2sZ2Lf1i0dtBPbnvcWHsC3.png"
+                        alt="Gmail forwarding settings with verified address"
+                        className="w-full object-cover"
+                      />
+                    </div>
+                    <p className="text-xs text-center text-stone-500">Once verified, your Sous-Chef email should appear as an available forwarding destination in Gmail.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Step 5 */}
+            <Card className="border border-stone-200 shadow-sm bg-white overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                <div className="grid md:grid-cols-2 gap-8 items-start">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold text-white font-bold text-sm">5</span>
+                      <h3 className="text-xl font-semibold text-stone-800">Create Filter 1 for Whole Foods receipt emails</h3>
+                    </div>
+                    <p className="text-stone-600 leading-relaxed">
+                      Now create your first Gmail filter for Whole Foods receipt emails.
+                    </p>
+                    <div className="bg-stone-800 rounded-lg p-4 font-mono text-sm space-y-2">
+                      <div className="flex">
+                        <span className="text-stone-400 w-20">From:</span>
+                        <span className="text-emerald-400">wholefoodsmarket@mail.wholefoodsmarket.com</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-stone-400 w-20">Subject:</span>
+                        <span className="text-emerald-400">Your Whole Foods Market Receipt</span>
+                      </div>
+                    </div>
+                    <p className="text-stone-600 text-sm">
+                      Click "Create filter," then check "Forward it to" and select your verified Sous-Chef forwarding email.
+                    </p>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Filter%20Details%201-Xz4vj7CIey7NhgorMr12ZxB2jMa7RT.png"
+                        alt="Gmail filter creation for Whole Foods receipts"
+                        className="w-full object-cover"
+                      />
+                    </div>
+                    <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Create%20Filter-AEufHIGdfjFdcGtZ6PIjgsCezn6Oa6.png"
+                        alt="Gmail filter forward checkbox"
+                        className="w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Step 6 */}
+            <Card className="border border-stone-200 shadow-sm bg-white overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                <div className="grid md:grid-cols-2 gap-8 items-start">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-gold text-white font-bold text-sm">6</span>
+                      <h3 className="text-xl font-semibold text-stone-800">Create Filter 2 for Amazon delivery emails</h3>
+                    </div>
+                    <p className="text-stone-600 leading-relaxed">
+                      Create a second Gmail filter for Whole Foods delivery emails that come from Amazon.
+                    </p>
+                    <div className="bg-stone-800 rounded-lg p-4 font-mono text-sm space-y-2">
+                      <div className="flex">
+                        <span className="text-stone-400 w-20">From:</span>
+                        <span className="text-emerald-400">order-update@amazon.com</span>
+                      </div>
+                      <div className="flex">
+                        <span className="text-stone-400 w-20">Subject:</span>
+                        <span className="text-emerald-400">Your Whole Foods Market order is out for delivery</span>
+                      </div>
+                    </div>
+                    <p className="text-stone-600 text-sm">
+                      Click "Create filter," then check "Forward it to" and select your verified Sous-Chef forwarding email.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Filter%20Details%202-qr29ORh60rkMfDo4thryFXjf5aJFQ7.png"
+                        alt="Gmail filter creation for Amazon delivery"
+                        className="w-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Step 7 */}
+            <Card className="border border-stone-200 shadow-sm bg-white overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                <div className="grid md:grid-cols-2 gap-8 items-start">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white font-bold text-sm">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      <h3 className="text-xl font-semibold text-stone-800">Final result</h3>
+                    </div>
+                    <p className="text-stone-600 leading-relaxed">
+                      When setup is complete, Gmail should show two active filters — one for Whole Foods receipt emails and one for Amazon delivery emails — both forwarding to your Sous-Chef address.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden">
+                      <img
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Final%20Filters-KFBLJFh7hfVfMgheYvmo2EqSK0qFwH.png"
+                        alt="Gmail showing both completed filters"
+                        className="w-full object-cover"
+                      />
+                    </div>
+                    <p className="text-xs text-center text-stone-500">Your finished setup should include two Gmail filters, both forwarding to Sous-Chef.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* What gets forwarded? */}
+            <Card className="border border-emerald-200 shadow-sm bg-emerald-50 overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
+                    <svg className="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-stone-800 mb-2">What gets forwarded?</h4>
+                    <p className="text-stone-600">
+                      Only the emails matching the two filters above. Sous-Chef does not receive your full inbox — only the Whole Foods receipt-related emails you choose to forward.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Link
+                href="/"
+                className="inline-flex items-center justify-center px-8 py-3 bg-gold hover:bg-gold/90 text-white font-semibold rounded-full transition-colors"
+              >
+                Get Sous-Chef
+              </Link>
+              <Link
+                href="#pantry"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('[value="pantry"]')?.dispatchEvent(new MouseEvent('click', { bubbles: true }));
+                }}
+                className="inline-flex items-center justify-center px-8 py-3 border border-stone-300 hover:bg-stone-50 text-stone-700 font-semibold rounded-full transition-colors"
+              >
+                See the app
+              </Link>
+            </div>
           </TabsContent>
 
           {/* Tab 2: Pantry */}
