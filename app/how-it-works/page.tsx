@@ -106,18 +106,30 @@ export default function HowItWorksPage() {
                       <h3 className="text-xl font-semibold text-stone-800">Copy your unique Sous-Chef email</h3>
                     </div>
                     <p className="text-stone-600 leading-relaxed">
-                      Open the Email & Receipts screen in the Sous-Chef app and tap "Copy Forwarding Email." This gives you your personal Sous-Chef forwarding address.
+                      Start here: open the menu → Profile → Email & Receipts. Then navigate to Gmail on your desktop to set up email forwarding.
                     </p>
                   </div>
-                  <div className="space-y-2">
-                    <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden bg-stone-900 flex justify-center">
-                      <img
-                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/connect-gmail-XylglivTa8sgg5snEGEvlXCnCr7abW.png"
-                        alt="Email & Receipts screen in Sous-Chef app"
-                        className="w-auto max-h-[400px] object-contain"
-                      />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden bg-stone-900 flex justify-center">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/HomeScreen-4Ki60M98O0C6K3qlwZNtKf4QnoExXO.jpg"
+                          alt="Sous-Chef home screen with menu open"
+                          className="w-auto max-h-[350px] object-contain"
+                        />
+                      </div>
+                      <p className="text-xs text-center text-stone-500">Open the menu and tap Profile</p>
                     </div>
-                    <p className="text-xs text-center text-stone-500">Your personal forwarding address lives in the app under Email & Receipts.</p>
+                    <div className="space-y-2">
+                      <div className="rounded-xl shadow-lg border border-stone-200 overflow-hidden bg-stone-900 flex justify-center">
+                        <img
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Email%20%26%20Receipts-7mXE8X7ViaXpFzAE3ltuC9n4JmecfO.jpg"
+                          alt="Email & Receipts screen in Sous-Chef app"
+                          className="w-auto max-h-[350px] object-contain"
+                        />
+                      </div>
+                      <p className="text-xs text-center text-stone-500">Copy your forwarding email</p>
+                    </div>
                   </div>
                 </div>
               </CardContent>
