@@ -271,14 +271,14 @@ export default function HowItWorksPage() {
                     <p className="text-stone-600 leading-relaxed">
                       Now create your first Gmail filter for Whole Foods receipt emails.
                     </p>
-                    <div className="bg-stone-800 rounded-lg p-4 font-mono text-sm space-y-2">
-                      <div className="flex">
-                        <span className="text-stone-400 w-20">From:</span>
-                        <span className="text-emerald-400">wholefoodsmarket@mail.wholefoodsmarket.com</span>
+                    <div className="bg-stone-800 rounded-lg p-4 font-mono text-sm space-y-2 overflow-x-auto">
+                      <div className="flex flex-col sm:flex-row sm:gap-2">
+                        <span className="text-stone-400 shrink-0">From:</span>
+                        <span className="text-emerald-400 break-all">wholefoodsmarket@mail.wholefoodsmarket.com</span>
                       </div>
-                      <div className="flex">
-                        <span className="text-stone-400 w-20">Subject:</span>
-                        <span className="text-emerald-400">Your Whole Foods Market Receipt</span>
+                      <div className="flex flex-col sm:flex-row sm:gap-2">
+                        <span className="text-stone-400 shrink-0">Subject:</span>
+                        <span className="text-emerald-400 break-all">Your Whole Foods Market Receipt</span>
                       </div>
                     </div>
                     <p className="text-stone-600 text-sm">
@@ -317,14 +317,14 @@ export default function HowItWorksPage() {
                     <p className="text-stone-600 leading-relaxed">
                       Create a second Gmail filter for Whole Foods delivery emails that come from Amazon.
                     </p>
-                    <div className="bg-stone-800 rounded-lg p-4 font-mono text-sm space-y-2">
-                      <div className="flex">
-                        <span className="text-stone-400 w-20">From:</span>
-                        <span className="text-emerald-400">order-update@amazon.com</span>
+                    <div className="bg-stone-800 rounded-lg p-4 font-mono text-sm space-y-2 overflow-x-auto">
+                      <div className="flex flex-col sm:flex-row sm:gap-2">
+                        <span className="text-stone-400 shrink-0">From:</span>
+                        <span className="text-emerald-400 break-all">order-update@amazon.com</span>
                       </div>
-                      <div className="flex">
-                        <span className="text-stone-400 w-20">Subject:</span>
-                        <span className="text-emerald-400">Your Whole Foods Market order is out for delivery</span>
+                      <div className="flex flex-col sm:flex-row sm:gap-2">
+                        <span className="text-stone-400 shrink-0">Subject:</span>
+                        <span className="text-emerald-400 break-all">Your Whole Foods Market order is out for delivery</span>
                       </div>
                     </div>
                     <p className="text-stone-600 text-sm">
